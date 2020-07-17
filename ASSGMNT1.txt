@@ -1,0 +1,218 @@
+                                                                                                                                                                                                                                                
+=======================================================databaSE MANAGEMENT==================================================
+===============================ASSIGNMENT 1===========================================
+
+QUE1 
+==>
+show databases;
+create database ASSIGN_1;
+show databases;
+show tables;
+create table SALESPEOPLE
+(
+	Snum int(4),
+	Sname varchar(10),
+	City varchar(10),
+	Comm float(3,2)
+);
+
+
+insert into SALESPEOPLE value ("1001","Peel","London",".12");
+insert into SALESPEOPLE value ("1002","Serres","San Jose",".13");
+insert into SALESPEOPLE value ("1004","Motika","London",".11");
+insert into SALESPEOPLE value ("1007","Rifkin","Barcelona",".15");
+insert into SALESPEOPLE value ("1003","Axelrod","New York",".10");
+
+SELECT * FROM SALESPEOPLE;
+-----------------------------------------------------------------------------------------------------------------------------
+QUE2
+==>
+create table CUSTOMERS
+(
+	Cnum int(4),
+	Cname varchar(10),
+	City varchar(10),
+	Rating int(4),
+	Snum int(4)
+);
+
+insert into CUSTOMERS value("2001","Hoffman","London","100","1001");
+insert into CUSTOMERS value("2002","Giovanni","Rome","200","1003");
+insert into CUSTOMERS value("2003","Liu","San Jose","200","1002");
+insert into CUSTOMERS value("2004","Grass","Berlin","300","1002");
+insert into CUSTOMERS value("2006","Clemens","London","100","1001");
+insert into CUSTOMERS value("2008","Cisneros","San Jose","300","1007");
+insert into CUSTOMERS value("2007","Pereira","Rome","100","1004");
+
+SELECT * FROM customers;
+----------------------------------------------------------------------------------------------------------------------------------------
+QUE3
+==>
+create table ORDERS
+(
+	Onum int(4),
+	Amt float(7,2),
+	Odate date,
+	Cnum int(4),
+	Snum int(4)
+);
+
+insert into orders (ONUM,AMT,ODATE,CNUM,SNUM) value(3001,18.69,'1990-10-03',2008,1007);
+insert into orders (ONUM,AMT,ODATE,CNUM,SNUM) value(3003,767.19,'1990-10-03',2001,1001),
+(3002,1900.10,'1990-10-03',2007,1004),
+(3005,5160.45,'1990-10-03',2003,1002),
+(3006,1098.16,'1990-10-03',2008,1007),
+(3009,1713.23,'1990-10-04',2002,1003),
+(3007,75.75,'1990-10-04',2004,1002),
+(3008,4723.00,'1990-10-05',2006,1001),
+(3010,1309.95,'1990-10-06',2004,1002),
+(3011,9891.88,'1990-10-06',2006,1001);
+
+
+
+===========================================exercise -1===========================================================
+
+QUE1 
+==>
+show databases;
+create database exe_1;
+show databases;
+show tables;
+
+create table SEMP
+(
+	EMPNO CHAR(4),
+	EMPNAME CHAR(20),
+	BASIC FLOAT(9,2),
+	DEPTNO CHAR(2),
+	DEPTHEAD CHAR(4)
+);
+
+mysql> show tables;
+---------------------------------------------------------------------------------------------------
+QUE2
+==>
+create table sdept
+(
+  	DEPTNO CHAR(2),
+ 	DEPTNAME CHAR(15)
+);
+show tables;
+-----------------------------------------------------------------------------------------------------
+QUE3
+==>
+ insert into SDEPT value("10","Development");
+ insert into SDEPT value("20","Training");
+
+SELECT * FROM sdept;
+-----------------------------------------------------------------------------------------------------------
+QUE4
+==>
+insert into SEMP value("0001","SUNIL","6000","10",NULL);
+insert into SEMP value("0002","HIREN","8000","20",NULL);
+insert into SEMP value("0003","ALI","4000","10","0001");
+insert into SEMP value("0004","GEORGE","6000",NULL,"0002");
+
+SELECT * FROM semp;
+---------------------------------------------------------------------------------------------------------
+
+
+create table SUPPLIER
+(
+	`S#` char(4),
+	Sname varchar(25),
+	Status int(4),
+	City char(15)
+);
+
+insert into SUPPLIER 
+values ('S1','Vaishnavi',10,'amravti'),('S2','vishnu',20,'london'),
+        ('S3','rohan',30,'Athens'),('S4','pratiksha',40,'chandur');
+
+select * from SUPPLIER;
+
+create table PARTS
+(
+	`P#` char(4),
+	Pname varchar(25),
+	Color varchar(25),
+	Weight int(4),
+	City char(15)
+);
+
+insert into PARTS
+values ('P1','part1','black',23,'badalapur'),('P2','part2','yellow',45,'london'),
+        ('P3','part3','green',40,'amravati'),('P4','part4','red',60,'chandur')
+	('P5','part5','brown',50,'paris'),('P6','part6','blue',78,'athens');
+
+select * from PARTS;
+
+create table PROJECTS
+(
+	`J#` char(4),
+	Jname varchar(25),
+	City char(15)
+);
+insert into PROJECTS
+values ('J1','pro1','London'),('J2','pro2','Paris'),
+        ('J3','pro3','Athens');
+
+SELECT * FROM PROJECTS;        
+        
+
+create table SUPPLIER_PARTS_PROJECT
+(
+	`S#` char(4),
+	`P#` char(4),
+	`J#` char(4),
+	Qty int(10)
+);
+
+select * from SUPPLIER_PARTS_PROJECT;
+
+QUE5
+==> Select * from SUPPLIER;
+
+QUE6
+==> select `S#`, Sname from SUPPLIER;
+
+QUE7
+==> select Pname,Color from PARTS where city= 'London';
+
+QUE8
+==> select * from SUPPLIER where city = 'London';
+
+QUE9
+==> select * from SUPPLIER where city = 'Paris' OR city='Athens';
+
+QUE10
+==> Select * from Projects where city = 'Athens';
+
+QUE11
+==> select * from PARTS where weight >=12 and  weight<=14;
+
+QUE12
+==> select * from SUPPLIER where `Status` >= 20 ; 
+
+QUE13
+==> select * from SUPPLIER where City != 'London';
+
+QUE14
+==>select City from Supplier; 
+
+QUE15
+==>select Weight,Weight*1000, Weight/1000 from parts;
+
+
+
+
+
+
+
+
+
+
+
+
+
+

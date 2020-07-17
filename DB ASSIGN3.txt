@@ -1,0 +1,8 @@
+====================================ASSIGNMENT 3==============================================
+Overview of SQL.
+================
+QUE1
+==>Yes, ANSI recognize the data type DATE.
+
+QUE2
+==> Data Manipulation Language (DML) is used to insert values in the table.

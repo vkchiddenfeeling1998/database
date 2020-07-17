@@ -1,0 +1,18 @@
+=================================ASSIGNMENT 2======================================
+Introducing Relational Databases.
+=================================
+
+
+QUE1
+==>"Cnum" is the Primary key for Customer table.
+
+QUE2
+==>"RATING" is the 4th Column of the Customer table. 
+
+QUE3
+==>For Column : Attribute ,  Method.
+   For Row : Tuple , Entity , oppurtunity.
+    
+
+QUE4
+==> the data is stored in fragments in DB Server HD.

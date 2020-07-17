@@ -1,0 +1,16 @@
+==================== assignment 4  ================================================
+
+que1
+==>select ONUM,AMT,ODATE from ORDERS;
+
+que2
+==> select * from CUSTOMERS where SNUM=1001;
+
+que3
+==> select CITY,SNAME,SNUM,COMM from SALESPEOPLE;
+
+que4
+==>select CNAME,RATING  from CUSTOMERS where CITY='San Jose';
+
+que5
+==>select distinct SNUM, ONUM from SALESPEOPLE order by SNUM;
