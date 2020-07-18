@@ -1,0 +1,30 @@
+================================== Assignment-6==============================================
+
+Using Special Operators in Conditions
+=====================================
+
+que1
+==> 1) select * from orders where odate=' 1990-10-03' or odate=' 1990-10-04';
+
+    2) select * from orders where odate in(' 1990-10-03', '1990-10-04');
+----------------------------------------------------------------------------------------------------------
+
+que2
+==> 1) select 	* from customers where Snum in
+       select Snum from salespeople where sname in ('peel', 'Motika'));
+       select *from CUSTOMERS where (Snum=1001 OR Snum=1004);
+
+    2) select *from CUSTOMERS where (Snum=1001 OR Snum=1004);
+-------------------------------------------------------------------------------------------------------
+
+que3
+==> select * from customers where cname >= 'A' AND CNAME < 'G';
+--------------------------------------------------------------------------------------------------------
+
+que4
+==> select* from customers where cname like 'C%';
+--------------------------------------------------------------------------------------------------------
+
+QUE5
+==> select* from ORDERS where amt<> 0 Or amt<> NULL;
+--------------------------------------------------------------------------------------------------------------
