@@ -8,8 +8,8 @@ QUE1
 -----------------------------------------------------------------------------------------------
 
 QUE2
-==> SELECT SNAME,CNAME FROM SALESPEOPLE, CUSTOMERS 
-    WHERE SALESPEOPLE.SNUM=CUSTOMERS.SNUM;
+==>SELECT SNAME,CNAME,ONUM FROM SALESPEOPLE, CUSTOMERS,ORDERS 
+    WHERE ORDERS.SNUM=CUSTOMERS.SNUM AND ORDERS.SNUM=SALESPEOPLE.SNUM;
 -----------------------------------------------------------------------------------------------
 
 QUE3
