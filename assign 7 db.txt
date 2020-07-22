@@ -1,0 +1,28 @@
+======================= assignment 7===========================================
+
+Summarizing Data with Aggregate Functions.
+------------------------------------------
+
+que1
+==>select count(odate) from orders where odate='1990-10-03';
+------------------------------------------------------------------------------
+
+que2
+==>select count(city) from customers where city is not null;
+------------------------------------------------------------------------------
+
+que3
+==>select min(amt),cnum from orders group by cnum;
+----------------------------------------------------------------------------
+
+que4
+==> SELECT *FROM customers WHERE cname LIKE 'G%' ORDER BY cname;
+------------------------------------------------------------------------------
+
+que5
+==> select max(rating) from customers;
+------------------------------------------------------------------------------
+
+que6
+==>  select ODATE,count(odate) from orders group by odate;
+-------------------------------------------------------------------------------
