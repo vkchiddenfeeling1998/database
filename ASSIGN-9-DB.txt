@@ -1,0 +1,23 @@
+======================== ASSIGNMENT 9 ===================================================
+
+Querying Multiple Tables at Once.
+---------------------------------
+
+QUE1
+==> SELECT ONUM,CNAME FROM ORDERS, CUSTOMERS WHERE ORDERS.CNUM=CUSTOMERS.CNUM;
+-----------------------------------------------------------------------------------------------
+
+QUE2
+==> SELECT SNAME,CNAME FROM SALESPEOPLE, CUSTOMERS 
+    WHERE SALESPEOPLE.SNUM=CUSTOMERS.SNUM;
+-----------------------------------------------------------------------------------------------
+
+QUE3
+==> SELECT CNAME,SNAME,COMM AS "RATE OF COMM" FROM SALESPEOPLE, CUSTOMERS 
+    WHERE SALESPEOPLE.SNUM=CUSTOMERS.SNUM AND COMM>.12;
+------------------------------------------------------------------------------------------------
+
+QUE4
+==>  SELECT CNAME,COMM FROM CUSTOMERS, SALESPEOPLE 
+     WHERE CUSTOMERS.SNUM=SALESPEOPLE.SNUM AND RATING>100;
+------------------------------------------------------------------------------------------------
