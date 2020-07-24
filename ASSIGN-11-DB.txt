@@ -1,0 +1,28 @@
+============================================ ASSIGNMENT 11=============================================
+
+SubquerieS
+==========
+
+
+QUE1
+==> SELECT onum,cnuM FROM orders
+    WHERE cnum=(SELECT cnum FROM customers
+    WHERE cname='cisneros');
+-----------------------------------------------------------------------------------------------------
+
+QUE2
+==> Select cname, rating, a.cnum
+    from orders a, customers b
+    where a.cnum = b.cnum
+    group by a.cnum
+    having count(a.cnum) >( select avg(cun) from ( select count(cnum) as cun from orders group by cnum) as temp);
+---------------------------------------------------------------------------------------------------------------
+
+QUE3
+==> SELECT sum(amt)
+    FROM orders
+    GROUP BY snum
+    HAVING sum(amt)>
+    (SELECT max(amt)
+    FROM orders);
+---------------------------------------------------------------------------------------------------------------
