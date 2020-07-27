@@ -1,0 +1,44 @@
+============================Exercise-5==============================================
+
+QUE1
+==> select sname,qty from s , spj where s.`s#`= spj.`s#`;
+--------------------------------------------------------------------------------
+
+QUE2
+==> select pname , qty from p , spj where p.`p#`= spj.`p#`;
+--------------------------------------------------------------------------------
+
+QUE3
+==> select jname , qty from j , spj where j.`j#`= spj.`j#`;
+--------------------------------------------------------------------------------
+
+QUE4
+==>  select sname,pname,jname,qty from s,p,j,spj where s.`s#`= spj.`s#` and p.`p#` = spj.`p#` and j.`j#` = spj.`j#`; 
+--------------------------------------------------------------------------------
+
+QUE5
+==>  select sname,pname,jname from s,p,j where s.city= p.city and p.city=j.city;
+--------------------------------------------------------------------------------
+
+QUE6
+==>  select p.pname,spj.qty from p,spj where spj.`p#` =  p.`p#` and p.color = 'Red';
+--------------------------------------------------------------------------------
+
+QUE7
+==>  select qty , `s#` from spj where `s#` = (select `s#` from s where status=20);
+--------------------------------------------------------------------------------
+
+QUE8
+==>  select `p#`, qty from spj where `p#` in (select `p#` from p where weight>14);
+--------------------------------------------------------------------------------
+
+QUE9
+==>  select pname,city from p where `p#` in (select `p#` from spj where qty>500);
+--------------------------------------------------------------------------------
+
+QUE10
+==> select p.pname, spj.qty from p,spj where spj.`p#` = (select p.pname from p where weight<15);
+--------------------------------------------------------------------------------
+
+QUE11s
+==> Select a.empname,b.empname as 'manager' from semp a,semp b where a.depthead = b.empno;

@@ -1,0 +1,59 @@
+=========================== Exercise-4==============================================================
+
+QUE1
+==> select min(status) from supplier;
+----------------------------------------------------------------------
+
+QUE2 
+==> select max(weight) from parts;
+----------------------------------------------------------------------
+
+QUE3
+==> select avg(weight) from parts;
+----------------------------------------------------------------------
+
+QUE4 
+==>  select `P#`,sum(Qty) from spj where `P#`= 'P1';
+----------------------------------------------------------------------
+
+QUE5 
+==>  select `P#`,sum(Qty) from spj
+     group by `P#`;
+----------------------------------------------------------------------
+
+QUE6 
+==> select `P#` ,avg(Qty) from spj group by `P#`;
+----------------------------------------------------------------------
+
+QUE7 
+==>  select `P#`,max(Qty>800) from spj group by `P#`;
+----------------------------------------------------------------------
+
+QUE8 
+==>   select status,count(`S#`) from s;
+      
+----------------------------------------------------------------------
+
+QUE9
+==>   select city,count(`J#`) from j group by city;
+----------------------------------------------------------------------
+
+QUE10
+==>  COUNT(Status):
+             COUNT(Status) evaluates the expression for each row in a set and 
+             returns the number of rows having a non-null values.
+	
+     COUNT(*):
+	COUNT(*) counts the number of items in a set. It includes NULL and duplicate values.
+        It returns total number of rows in the table.
+
+----------------------------------------------------------------------
+
+QUE11 
+==>   select case
+      when status = 10 then 'Ten'
+      when status = 20 then 'Twenty'
+      when status = 30 then 'Thirty'
+      end as status ,count(`S#`) "count"
+      from s group by status;
+------------------------------------------------------------------------------
