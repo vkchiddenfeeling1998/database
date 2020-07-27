@@ -1,0 +1,27 @@
+=========================== ASSIGNMENT 13===================================================
+
+Using the UNION clause.
+=======================
+
+
+QUE1
+==> SELECT cname,city,rating as'HIGH RATING' FROM customers WHERE rating>200
+    UNION
+    SELECT cname,city,rating as 'LOW RATING' FROM customers WHERE rating <=200;
+
+---------------------------------------------------------------------------------------------
+
+QUE2
+==>SELECT sname,snum,cname FROM salespeople
+   JOIN customers using(snum) WHERE snum IN
+   (SELECT snum FROM customers
+    GROUP BY snum HAVING count(snum)>1)
+    ORDER BY sname,cname;
+-----------------------------------------------------------------------------------------------
+
+QUE3
+==> SELECT snum FROM salespeople WHERE city='san jose'
+    UNION
+    SELECT DISTINCT snum FROM orders WHERE snum IN
+    (SELECT snum FROM orders WHERE odate LIKE '03-OCT-%');
+-----------------------------------------------------------------------------------------------

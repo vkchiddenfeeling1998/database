@@ -1,0 +1,28 @@
+============================================ASSIGNMENT 12 ================================================
+
+Using the operators IN, ANY, and ALL.
+====================================
+
+
+QUE1
+==> select * from customers where rating>=any
+    (select rating from customers where snum =
+    (select snum from salespeople where sname='serres'));
+--------------------------------------------------------------------------------------------------------------
+
+QUE2
+==> SELECT snum FROM salespeople
+    WHERE (snum,city)<>ALL
+    (SELECT snum, City FROM customers);
+-----------------------------------------------------------------------------------------------------------------
+
+QUE3
+==> Select * From orders Where amt> any
+    ( select amt from orders  where cnum IN
+    ( select cnum from customerS where city='london' ) );
+-----------------------------------------------------------------------------------------------------------------
+
+QUE4
+==> select *from orders  where amt > ANY(select min(amt) from orders
+    where cnum in(select cnum from customers where city='london'));
+-----------------------------------------------------------------------------------------------------------------
