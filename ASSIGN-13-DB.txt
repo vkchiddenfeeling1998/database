@@ -12,11 +12,12 @@ QUE1
 ---------------------------------------------------------------------------------------------
 
 QUE2
-==>SELECT sname,snum,cname FROM salespeople
-   JOIN customers using(snum) WHERE snum IN
-   (SELECT snum FROM customers
-    GROUP BY snum HAVING count(snum)>1)
-    ORDER BY sname,cname;
+==>select sname as Name, snum Number from salespeople 
+   where snum in (select snum from orders  group by snum having count(*) > 1)
+						UNION
+   select cname as Name, cnum Number from customers 
+   where cnum in (select cnum from orders  group by cnum having count(*) > 1);
+
 -----------------------------------------------------------------------------------------------
 
 QUE3
