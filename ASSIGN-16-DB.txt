@@ -1,0 +1,27 @@
+=================================== ASSIGNMENT 16=================================
+
+
+
+QUE1
+==> create index iodate_orders on ORDERS (Odate);
+    show index from ORDERS;
+------------------------------------------------------------------------------------
+
+
+QUE2
+==> alter table ORDERS ADD PRIMARY KEY(Onum);
+    select * from information_schema.key_column_usage where table_name ='ORDERS';
+
+------------------------------------------------------------------------------------
+
+
+QUE3
+==> CREATE INDEX Idate_DATE ON orders(odate);
+------------------------------------------------------------------------------------
+
+
+QUE4
+==>  alter table CUSTOMERS ADD PRIMARY KEY(Cnum);
+
+
+------------------------------------------------------------------------------------

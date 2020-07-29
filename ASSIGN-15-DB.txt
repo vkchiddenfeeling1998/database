@@ -1,0 +1,19 @@
+============================= ASSIGNMENT -15 =================================
+
+Using Subqueries with DML Commands.
+==================================
+
+QUE1
+==> CREATE TABLE Multicast_1 AS SELECT * FROM salespeople
+    WHERE snum IN (SELECT snum FROM customers
+     GROUP BY snum HAVING count(snum)>1);
+--------------------------------------------------------------------------------------
+
+QUE2
+==> DELETE FROM CUSTOMERS
+    WHERE CNUM NOT IN (SELECT CNUM FROM ORDERS);
+--------------------------------------------------------------------------------------
+
+QUE3
+==> UPDATE salespeople SET comm=comm*1.20 WHERE snum IN
+    (SELECT snuM FROM orders WHERE amt>300);

@@ -1,0 +1,39 @@
+=================================== ASSIGNMENT 17=================================
+
+
+
+QUE1
+==> CREATE TABLE orders1 
+    ( 
+      onum number(4) UNIQUE KEY,
+      cnum number(4),
+      sname number(4), 
+      odate date NOT NULL, 
+      PRIMARY key(onum,cnum)
+    );
+------------------------------------------------------------------------------------
+
+
+QUE2
+==>  create table salespeople
+     (
+       snum int(4) primary key,
+       comm float(5,2) default 0.1 not null,
+       sname varchar(10)
+       check ((substr(sname,1,1)) between'A' and 'M' )
+     );
+------------------------------------------------------------------------------------
+
+
+QUE3
+==>  create table list
+    (
+      cnum int(4) not null,
+      onum int(4) not null,
+      snum int(4) not null,
+      check(onum>cnum),
+      check(cnum>snum)
+     );
+
+------------------------------------------------------------------------------------
+
