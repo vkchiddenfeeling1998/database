@@ -1,0 +1,17 @@
+================================Assignment-18=========================================
+
+Maintaining the Integrity of your Data
+=======================================
+
+que1
+==> create table cityorders
+    select snum,onum,amt,cnum,city
+    from orders natural join customers;
+
+    alter table cityorders add constraint COnum_pk primary key(onum);
+-------------------------------------------------------------------------------------------------
+que2
+==>  alter table orders add prev int;
+     alter table orders add constraint O_prev_fk foreign key(prev) references orders(onum);
+     alter table orders add constraint o_cnum_fk foreign key(cnum) references customers(cnum);
+--------------------------------------------------------------------------------------------------

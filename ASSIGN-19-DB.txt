@@ -1,0 +1,34 @@
+===============================Assignment-19======================================
+
+Views
+======
+
+que1
+==>     CREATE VIEW HighRATING_V1
+	AS 
+	SELECT * FROM CUSTOMERS WHERE  rating= (SELECT max(rating) FROM customers);
+----------------------------------------------------------------------------------------------
+
+que2
+==>     CREATE VIEW COUNT_SALpeople
+	AS
+	SELECT CITY,COUNT(snum) 'Num of person' FROM SALESPEOPLE
+	GROUP BY CITY order by city;
+------------------------------------------------------------------------------
+
+que3
+==>    CREATE VIEW AVG_TOTAL 
+	AS
+	SELECT SNAME,AVG(ONUM) AVERAGE,COUNT(ONUM) 'Total orders' 
+	FROM ORDERS,SALESPEOPLE
+	WHERE  SALESPEOPLE.SNUM = ORDERS.SNUM
+	GROUP BY SNAME;
+-----------------------------------------------------------------------------
+QUE4
+==>     CREATE VIEW MANY_CUS
+	AS
+	SELECT SNAME,CNAME FROM CUSTOMERS,SALESPEOPLE
+	WHERE SALESPEOPLE.SNUM = CUSTOMERS.SNUM; 
+
+
+

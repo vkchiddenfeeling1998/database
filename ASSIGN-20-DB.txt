@@ -1,0 +1,67 @@
+============================Assignment – 20===================================
+
+Changing Values through Views.
+==============================
+
+QUE1.
+  
+ #1  Create View Dailyorders
+     as Select Distinct cnum, snum, onum, odate from Orders;
+
+==>  YES, this view will allowed to create updatable view.
+--------------------------------------------------------------------------
+   
+  #2. Create View Custotals
+      as Select cname, Sum (amt) Sum_Amt from Orders, Customers
+      where Orders.cnum=Customers.cnum Group by cname;
+
+==>   this view is not allow to create updatable view because       
+----------------------------------------------------------------------------
+
+ #3. Create view Thirdorders
+      as Select * from Dailyorders where odate= '1990-10-03';
+
+==>   this view will allowed to create updatable view
+-----------------------------------------------------------------------------
+
+ #4. Create view Nullcities
+      as Select snum, sname, city
+      from Salespeople where city is NULL
+      OR sname BETWEEN 'A' and 'MZ';
+
+==>   this view will allowed to create updatable view
+-------------------------------------------------------------------------------
+
+QUE2.
+==>  CREATE VIEW com_1
+     AS
+     SELECT snum,comm FROM salespeople WHERE comm between 0.10 and 0.20 ;
+
+    Grant select,insert,update on commissions to VAISHU;
+
+-------------------------------------------------------------------------------
+
+QUE3.
+==>   create table ORDERSsyst
+      ( 
+	Onum int(4),
+	Amt float(7,2),
+	Odate datetime default now(),
+	Snum int(4),
+	primary key(Onum),
+	Foreign Key(Snum) references SALESPEOPLE(Snum)
+       );
+
+insert into ORDERSsys(Onum,Amt,Snum)
+values(3001,18.69,1007),
+(3003,767.19,1001),
+(3002,1900.10,1004),
+(3005,5160.45,1002),
+(3006,1098.16,1007),
+(3009,1713.23,1003),
+(3007,75.75,1002),
+(3008,4723.00,1001),
+(3010,1309.95,1002),
+(3011,9891.88,1001);
+---------------------------------------------------------------------------------------
+
