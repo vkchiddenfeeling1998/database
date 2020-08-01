@@ -5,10 +5,11 @@
 QUE1
 ==> CREATE TABLE orders1 
     ( 
-      onum number(4) UNIQUE KEY,
+      onum number(4),
       cnum number(4),
       sname number(4), 
-      odate date NOT NULL, 
+      odate date NOT NULL,
+      UNIQUE(onum),
       PRIMARY key(onum,cnum)
     );
 ------------------------------------------------------------------------------------
